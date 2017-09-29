@@ -1,10 +1,14 @@
 {{ partial "header" . }}
 
+
 <main>
 
-    <h2>{{ .Title }}</h2>
-
-    {{ range (.Paginator 5).Pages }} {{ partial "list-item" . }} {{ end }}
+    {{ if eq (len .Pages) 0 }}
+        {{ partial "single" . }}
+    {{ else }}
+        <h2>{{ .Title }}</h2>
+        {{ range (.Paginator).Pages }} {{ partial "list-item" . }} {{ end }}
+    {{ end }}
 
 </main>
 

@@ -1,4 +1,4 @@
-<div class="item">
+<div class="item text-justify" style="padding: 5px;">
 
     {{ $.Scratch.Set "link" .RelPermalink }}
     {{ with .Params.repo }}
@@ -17,7 +17,10 @@
     {{ with .Description }} {{ $.Scratch.Set "subtitle" . }} {{ end }}
 
     <h4><a href="{{ .Scratch.Get "link" }}">{{ .Title }}</a></h4>
-    <h5>{{ $.Scratch.Get "subtitle" }}</h5>
-    {{ range .Params.tags }} <kbd class="item-tag">{{ . }}</kbd> {{ end }}
+    <span style="color: #525252;">
+        {{ $.Scratch.Get "subtitle" }}
+        {{ range .Params.tags }} <kbd class="item-tag">{{ . }}</kbd> {{ end }}
+    </span>
+   
 
 </div>

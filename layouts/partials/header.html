@@ -33,8 +33,9 @@
 
                     {{ if .Site.Menus.main }}
                         <ul class="nav navbar-nav">
+                            {{ $c := . }}
                             {{ range sort .Site.Menus.main }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                <li class="{{ if and ( or ($c.IsMenuCurrent "main" .) ($c.HasMenuCurrent "main" .) ) (ne .Identifier "logo") }}active{{ end }}" ><a href="{{ .URL }}" >{{ .Pre }}{{ .Name }}{{ .Post }}</a></li>
                             {{ end }}
                         </ul>
                     {{ end }}

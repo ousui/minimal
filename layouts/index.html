@@ -3,13 +3,12 @@
 <main>
 
     <div class="intro">
-
-        <h1>{{ .Site.Title }}</h1>
-
-        <h2>{{ markdownify .Site.Params.Description }}</h2>
-
+        <h1>{{ .Title }}</h1>
+        <h2>{{ markdownify .Description }}</h2>
     </div>
 
+    <div class="text-justify">{{ .Content }}</div>
+    
 </main>
 
 {{ partial "footer" . }}
