@@ -93,6 +93,15 @@ h1 a,h2 a,h3 a {
 .navbar-default .navbar-nav > .active > a {
     height: 100%;
     font-weight: 900 !important;
+    line-height: 22px;
+}
+
+.navbar-default .navbar-nav > .logo > a {
+    height: 100%;
+    font-weight: 900 !important;
+    line-height: 22px;
+    font-size: 22px;
+    color: #000000 !important;
 }
 
 footer {
